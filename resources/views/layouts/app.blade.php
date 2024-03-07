@@ -10,8 +10,17 @@
 </head>
 
 <body>
-    <x-navbar />
-    <main class="p-3">
+    @auth
+        @if (Auth::user()->role === 'admin')
+            <x-navbar-admin />
+        @else
+            <x-navbar />
+        @endif
+    @endauth
+    @guest
+        <x-navbar />
+    @endguest
+    <main class="p-3 bg-light">
         <div class="container">
             {{ $slot }}
         </div>

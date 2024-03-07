@@ -2,7 +2,8 @@
     <div class="px-4 my-5 text-center border-bottom">
         <h1 class="display-4 fw-bold text-body-emphasis">Cekranmor Polres Sorong</h1>
         <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">langkah inovatif Polres Sorong untuk memastikan keamanan komunitas berkendara. Dengan
+            <p class="lead mb-4">Aplikasi ini merupakah langkah inovatif Polres Sorong untuk memastikan keamanan
+                komunitas berkendara. Dengan
                 fitur canggih, kami
                 menyediakan alat yang memudahkan Anda memverifikasi keaslian rangka motor secara langsung dari perangkat
                 pintar
