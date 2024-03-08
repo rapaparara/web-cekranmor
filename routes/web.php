@@ -11,6 +11,7 @@ Route::prefix('/')->group(function () {
 });
 Route::prefix('admin')->middleware(IsAdmin::class)->group(function () {
           Route::get('/', \App\Livewire\Admin::class)->name('home.admin');
+          Route::get('/laporan', \App\Livewire\Laporan::class)->name('laporan.admin');
           Route::get('/logout', \App\Livewire\Login::class)->name('logout');
 });
 Route::middleware(['auth'])->group(function () {

@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card-body">
-                    <h3 class="card-title mb-3">Login</h3>
+                    <h3 class="card-title mb-3"><i class="bi bi-arrow-right me-2"></i>Login</h3>
                     <form class="row g-3" wire:submit="login">
                         <div class="col-md-12">
                             <x-flash-messages />

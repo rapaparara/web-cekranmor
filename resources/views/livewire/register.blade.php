@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card-body">
-                    <h3 class="card-title mb-3">Buat Akun</h3>
+                    <h3 class="card-title mb-3"><i class="bi bi-key me-2"></i>Buat Akun</h3>
                     <form class="row g-3" wire:submit="save">
                         <div class="col-md-12">
                             <x-flash-messages />

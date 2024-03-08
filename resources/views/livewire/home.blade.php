@@ -9,9 +9,12 @@
                 pintar
                 Anda.</p>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{{ route('cek-rangka') }}" role="button">Periksa
+                <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{{ route('cek-rangka') }}" role="button"><i
+                        class="bi bi-search me-2"></i>Periksa
                     Kendaraan</a>
-                <a class="btn btn-outline-secondary btn-lg px-4" href="{{ route('register') }}" role="button">Chat dengan
+                <a class="btn btn-outline-secondary btn-lg px-4" href="{{ route('register') }}" role="button"><i
+                        class="bi bi-chat-dots-fill me-2"></i>Chat
+                    dengan
                     Admin</a>
             </div>
         </div>
