@@ -22,6 +22,6 @@ class Login extends Component
     public function logout()
     {
         Auth::logout();
-        return redirect('/login');
+        return redirect()->route('login');
     }
 }

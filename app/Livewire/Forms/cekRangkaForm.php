@@ -14,8 +14,9 @@ class cekRangkaForm extends Form
     public function cek()
     {
         $validate = $this->validate();
-        $laporan = laporan::where('no_rangka', 'LIKE', "%{$this->nomor}%")
-            ->orWhere('no_mesin', 'LIKE', "%{$this->nomor}%")
+        $laporan = laporan::where('no_rangka', $this->nomor)
+            ->orWhere('no_mesin', $this->nomor)
+            ->limit(1)
             ->get();
         return $laporan;
     }

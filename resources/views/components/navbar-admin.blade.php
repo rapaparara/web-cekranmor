@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-primary">
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
     <div class="container-fluid">
         <a wire:navigate class="navbar-brand" href="{{ route('home.admin') }}">
             <i class="bi bi-phone me-2"></i> {{ config('app.name') }}
@@ -11,13 +11,14 @@
             <ul class="navbar-nav">
                 <x-nav-link :active="request()->routeIs('home.admin')" href="{{ route('home.admin') }}"><i
                         class="bi bi-house-fill me-2"></i>Home</x-nav-link>
-                <x-nav-link :active="request()->routeIs('home.admin')" href="{{ route('home.admin') }}"><i
+                <x-nav-link :active="request()->routeIs('chat.admin')" href="{{ route('chat.admin') }}"><i
                         class="bi bi-chat-dots-fill me-2"></i>Chat</x-nav-link>
                 <x-nav-link :active="request()->routeIs('laporan.admin')" href="{{ route('laporan.admin') }}"><i
                         class="bi bi-archive-fill me-2"></i>Laporan</x-nav-link>
+                <x-nav-link :active="request()->routeIs('cek-rangka')" href="{{ route('cek-rangka') }}"><i class="bi bi-search me-2"></i>Periksa
+                    Kendaraan</x-nav-link>
                 @if (Auth::user())
-                    <x-nav-link :active="request()->routeIs('login')" href="{{ route('login') }}"><i
-                            class="bi bi-arrow-left-square-fill me-2"></i>Logout</x-nav-link>
+                    <livewire:logout />
                 @endif
             </ul>
         </div>

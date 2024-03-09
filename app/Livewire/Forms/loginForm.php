@@ -25,7 +25,7 @@ class loginForm extends Form
                 return redirect()->route('home.pengguna')->with('role', $user->role);
             }
         } else {
-            flash('Login Gagal.', 'danger');
+            flash('Email/password yang anda masukkan salah.', 'danger');
             return redirect()->route('login');
         }
     }
