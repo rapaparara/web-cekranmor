@@ -19,6 +19,10 @@ class loginForm extends Form
         $this->validate();
         $user = User::where('email', $this->email)->first();
         if (Auth::attempt(['email' => $this->email, 'password' => $this->password])) {
+            session(['user_id' => $user->id]);
+            session(['name' => $user->name]);
+            session(['email' => $user->email]);
+            session(['user_role' => $user->role]);
             if ($user->role == 'admin') {
                 return redirect()->route('home.admin')->with('role', $user->role);
             } else {
