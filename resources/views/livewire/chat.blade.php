@@ -11,7 +11,8 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fa fa-search p-2"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Search...">
+                            <input wire:model.live="katakunci" type="text" class="form-control"
+                                placeholder="Search...">
                         </div>
                         <ul class="list-unstyled chat-list mt-2 mb-0">
                             @foreach ($dataUser as $key => $value)
@@ -69,20 +70,29 @@
                                         @endforeach
                                     @endforeach
                                 @else
-                                    <h4>belum ada chat</h4>
+                                    <h4>Belum ada chat.</h4>
                                 @endif
 
                             </ul>
                         </div>
                         <div class="chat-message clearfix">
-                            <div class="input-group mb-0">
-                                <div class="input-group-prepend">
-                                    <a href=""><span class="input-group-text"><i
-                                                class="fa fa-send p-2"></i></span>
-                                    </a>
+                            <form wire:submit="save" action="">
+                                <div class="input-group mb-0">
+                                    <input wire:click="$refresh" wire:model="pesan" type="text" class="form-control"
+                                        placeholder="Masukkan pesan disini...">
+                                    <div class="input-group-prepend">
+                                        <button type="submit" role="submit"
+                                            style="border:none; background:none; padding:0; margin:0;">
+                                            <span class="input-group-text">
+                                                <i class="fa fa-send p-2"></i>
+                                            </span>
+                                        </button>
+                                    </div>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Masukkan pesan disini...">
-                            </div>
+                                @error('pesan')
+                                    <small class="text-danger d-block mt-1">{{ $message }}</small>
+                                @enderror
+                            </form>
                         </div>
                     </div>
                 </div>
