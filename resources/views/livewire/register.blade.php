@@ -1,16 +1,28 @@
 <div>
     <div class="mb-3">
-        <h1>Masuk dengan akun anda</h1>
-        <p>Silakan masukkan email dan password anda untuk login.</p>
+        <h1>Buat Akun Baru</h1>
+        <p>Anda harus punya akun sebelum bisa chat dengan admin. Anda sudah punya akun? <a
+                href="{{ route('login') }}">Masuk
+                disini</a>.</p>
     </div>
     <div class="card">
         <div class="row">
             <div class="col-md-12">
                 <div class="card-body">
-                    <h3 class="card-title mb-3"><i class="bi bi-arrow-right me-2"></i>Login</h3>
-                    <form class="row g-3" wire:submit="login">
+                    <h3 class="card-title mb-3"><i class="bi bi-key me-2"></i>Buat Akun</h3>
+                    <form class="row g-3" wire:submit="save">
                         <div class="col-md-12">
                             <x-flash-messages />
+                            <div class="form-floating mb-3">
+                                <div class="form-floating mb-3">
+                                    <input wire:model="form.name" type="text" class="form-control" id="name"
+                                        placeholder="Nama Lengkap disini">
+                                    <label for="name">Masukkan nama lengkap anda</label>
+                                    @error('form.name')
+                                        <small class="text-danger d-block mt-1">{{ $message }}</small>
+                                    @enderror
+                                </div>
+                            </div>
                             <div class="form-floating mb-3">
                                 <div class="form-floating mb-3">
                                     <input wire:model="form.email" type="email" class="form-control" id="email"
@@ -31,12 +43,8 @@
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-12 mb-3">
-                                <small>Belum punya akun? buat akun anda <a
-                                        href="{{ route('register') }}">disini.</a></small>
-                            </div>
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Masuk</button>
+                                <button type="submit" class="btn btn-primary">Buat Akun</button>
                             </div>
                     </form>
                 </div>
